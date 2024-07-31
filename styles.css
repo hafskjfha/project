@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.box {
+    width: 240px;
+    padding: 10px;
+    background-color: lightblue;
+    border: 1px solid #000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px; /* 단어의 글자 크기를 10px로 설정 */
+    /*overflow: hidden;*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pos {
+    font-size: 8px; /* 품사의 글자 크기를 8px로 설정 */
+    margin-left: 5px;
+}
+
+.meaning {
+    font-size: 8px; /* 뜻의 글자 크기를 8px로 설정 */
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.additional-box {
+    display: none;
+    position: absolute;
+    background-color: lightcoral;
+    padding: 10px;
+    border: 1px solid #000;
+    pointer-events: none;
+    z-index: 10;
+    white-space: normal;
+    max-width: 300px; /* Set a max-width */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
