@@ -5,6 +5,7 @@
     align-items: center;
     gap: 10px;
     padding: 20px;
+    position: relative; /* Add this to make the container the positioning context */
 }
 
 .box {
@@ -12,7 +13,6 @@
     padding: 10px;
     background-color: lightblue;
     border: 1px solid #000;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,15 +38,15 @@
 
 .additional-box {
     display: none;
-    position: absolute;
+    position: absolute; /* Change to absolute */
+    /*width: 100%;*/
     background-color: lightcoral;
     padding: 10px;
     border: 1px solid #000;
     pointer-events: none;
     z-index: 10;
     white-space: normal;
-    max-width: 300px; /* Set a max-width */
+    max-width: 500px; /* Set a max-width */
     box-sizing: border-box; /* Ensure padding and border are included in the width */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-

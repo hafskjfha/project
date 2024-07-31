@@ -2,9 +2,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('container');
 
     const wordsDB = {
-        "example": [["명사", "동사"], ["사례", "예시","dhjjdjkhdkjhjkdhkj"]],
+        "example": [["명사", "동사"], ["사례", "예시", "dhjjdjkhdkjhjkdhkj"]],
         "hover": [["동사"], ["마우스를 위에 올리다"]],
-        "box": [["명사"], ["상자", "박스"]]
+        "box": [["명사"], ["상자", "박스"]],
+        "m": [["명사"], ["상자", "박스"]],
+        "bsox": [["명사"], ["상자", "박스"]],
+        "bosdx": [["명사"], ["상자", "박스"]],
+        "boxf": [["명사"], ["상자", "박스"]],
+        "boxy": [["명사"], ["상자", "박스"]],
+        "boxd": [["명사"], ["상자", "박스"]],
         // 추가 단어를 여기에 입력
     };
 
@@ -18,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const posSpan = document.createElement('span');
         posSpan.classList.add('pos');
-        posSpan.style.fontSize = '8px'; // 품사의 글자 크기를 8px로 설정
+        posSpan.style.fontSize = '5px'; // 품사의 글자 크기를 8px로 설정
         posSpan.textContent = wordsDB[word][0].map(pos => (pos === "명사" ? "명" : "동")).join('/');
 
         const meaningSpan = document.createElement('span');
@@ -57,12 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(box);
 
         box.addEventListener('mousemove', (event) => {
-            const boxRect = box.getBoundingClientRect();
             const containerRect = container.getBoundingClientRect();
             const additionalBoxRect = additionalBox.getBoundingClientRect();
 
-            let mouseX = event.clientX - boxRect.left;
-            let mouseY = event.clientY - boxRect.top;
+            let mouseX = event.clientX - containerRect.left;
+            let mouseY = event.clientY - containerRect.top;
 
             let left = mouseX - additionalBoxRect.width / 2;
             let top = mouseY - additionalBoxRect.height + 30;
